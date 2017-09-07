@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/add-runner', 'RunnerController@create')->name('add-runner');
+Route::post('/add-runner', 'RunnerController@store');

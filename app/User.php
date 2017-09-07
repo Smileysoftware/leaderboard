@@ -26,4 +26,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function fetchRunners(  )
+    {
+        return User::where('runner' , '1')->get();
+    }
+
+    public static function createRunner( $data )
+    {
+        $u = new User;
+
+        $u->firstname = $data['firstname'];
+        $u->surname = $data['surname'];
+        $u->dob = $data['dob'];
+        $u->email = $data['email'];
+        $u->runner = 1;
+
+        $u->save();
+    }
 }
