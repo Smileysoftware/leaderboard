@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\createRunner;
 use App\User;
 
+/**
+ * Class RunnerController
+ * @package App\Http\Controllers
+ */
 class RunnerController extends Controller
 {
-    public static function create(  )
+	/**
+	 * @return $this
+	 */
+	public static function create(  )
     {
     	$runners = User::fetchRunners();
 
@@ -15,13 +22,33 @@ class RunnerController extends Controller
 	        ->with('runners' , $runners);
     }
 
-    public static function store( createRunner $request )
+	/**
+	 * @param createRunner $request
+	 *
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 */
+	public static function store( createRunner $request )
     {
 		$data = $request->except('_token');
 
 		User::createRunner( $data );
 
 		return redirect('/add-runner');
+
+    }
+
+	/**
+	 * @param $id
+	 *
+	 * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 */
+	public static function delete( $id )
+    {
+    	$runner = User::where('id' , $id)->where('runner' , 1)->first();
+
+    	$runner->delete();
+
+	    return redirect('/add-runner');
 
     }
 }
