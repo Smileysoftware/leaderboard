@@ -17,7 +17,7 @@ class Time extends Model
 	 */
 	public function runner()
 	{
-		return $this->hasOne('App\User' , 'id');
+		return $this->hasOne('App\User' , 'id' , 'user_id');
 	}
 
 	/**
