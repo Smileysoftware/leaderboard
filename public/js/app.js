@@ -5,7 +5,11 @@ $(document).ready(function () {
     $('html, body').animate({
         scrollTop: $("tr.latest").offset().top
     }, scrollTime, function(){
-        $("html, body").animate({scrollTop: 0}, scrollTime);
+        setTimeout( ScrollBack , 10000 )
     });
+
+    function ScrollBack(){
+        $("html, body").animate({scrollTop: 0}, scrollTime);
+    }
 
 });
