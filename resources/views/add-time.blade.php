@@ -39,7 +39,11 @@
                                 <tbody>
                                 @foreach( $times as $time )
 
-                                    <tr>
+                                    @if ( $time->id == $latest->id )
+                                        <tr class="latest">
+                                    @else
+                                        <tr>
+                                    @endif
                                         <td># {{ $i }}</td>
                                         <td>{{ $time->runner['firstname'] }}</td>
                                         <td>{{ $time->runner['surname'] }}</td>

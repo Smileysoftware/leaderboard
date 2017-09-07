@@ -12,10 +12,12 @@ class TimesController extends Controller
     {
     	$runners = User::fetchRunners();
     	$times = Time::fetchTodaysTimes();
+    	$latest = Time::latest();
     	
         return view('add-time')
 	        ->with('runners' , $runners )
-	        ->with('times' , $times );
+	        ->with('times' , $times )
+	        ->with( 'latest' , $latest );
     }
 
     public function store( createTime $request )

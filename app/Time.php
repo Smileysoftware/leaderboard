@@ -38,9 +38,16 @@ class Time extends Model
 	 */
 	public static function fetchTodaysTimes( )
     {
-    	$times = Time::with('runner')->whereRaw(" `created_at` > date('now') ")->get();
+    	return Time::with('runner')->whereRaw(" `created_at` > date('now') ")->get();
 	    
-	    return $times;
+    }
 
+	/**
+	 * @return Model|null|static
+	 */
+	public static function latest(  )
+    {
+        return Time::orderBy('id' , 'desc')->select('id')->first();
+        
     }
 }
