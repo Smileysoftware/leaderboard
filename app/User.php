@@ -5,6 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Class User
+ * @package App
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -27,12 +31,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function fetchRunners(  )
+
+
+	/**
+	 * @return \Illuminate\Database\Eloquent\Collection|static[]
+	 */
+	public static function fetchRunners(  )
     {
         return User::where('runner' , '1')->get();
     }
 
-    public static function createRunner( $data )
+	/**
+	 * @param $data
+	 */
+	public static function createRunner( $data )
     {
         $u = new User;
 

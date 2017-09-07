@@ -51,4 +51,9 @@ class RunnerController extends Controller
 	    return redirect('/add-runner');
 
     }
+    
+    public static function edit( $id )
+    {
+        dd( 'This needs doing' );
+	}
 }

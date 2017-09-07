@@ -11,15 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LeaderboardController@index');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'LeaderboardController@index');
+
 Route::get('/add-runner', 'RunnerController@create')->name('add-runner');
 Route::post('/add-runner', 'RunnerController@store');
 
 Route::get('/delete-runner/{id}', 'RunnerController@delete');
+Route::get('/edit-runner/{id}', 'RunnerController@edit');
+
+Route::get('/add-times', 'TimesController@create')->name('add-times');
+Route::post('/add-times', 'TimesController@store');
+
 
