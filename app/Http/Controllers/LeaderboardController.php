@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Time;
-use Illuminate\Http\Request;
 
+/**
+ * Class LeaderboardController
+ * @package App\Http\Controllers
+ */
 class LeaderboardController extends Controller
 {
-    public function index(  )
+	/**
+	 * @return $this
+	 */
+	public function index(  )
     {
 	    $times = Time::fetchTodaysTimes();
 	    

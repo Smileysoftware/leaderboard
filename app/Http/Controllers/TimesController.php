@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\newTimeAdded;
 use App\Http\Requests\createTime;
 use App\Time;
 use App\User;
-use Illuminate\Support\Facades\Auth;
 use Pusher\Pusher;
 
 /**
