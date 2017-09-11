@@ -31,6 +31,8 @@ class Time extends Model
         $t->time = $data['time'];
 
         $t->save();
+
+        return $t->id;
     }
 
 	/**
@@ -38,7 +40,7 @@ class Time extends Model
 	 */
 	public static function fetchTodaysTimes( )
     {
-    	return Time::with('runner')->whereRaw(" `created_at` > date('now') ")->get();
+    	return Time::with('runner')->whereRaw(" `created_at` > date('now') ")->orderBy('time' , 'asc')->get();
 	    
     }
 

@@ -22,9 +22,11 @@ Route::get('/add-runner', 'RunnerController@create')->name('add-runner');
 Route::post('/add-runner', 'RunnerController@store');
 
 Route::get('/delete-runner/{id}', 'RunnerController@delete');
-Route::get('/edit-runner/{id}', 'RunnerController@edit');
 
 Route::get('/add-times', 'TimesController@create')->name('add-times');
 Route::post('/add-times', 'TimesController@store');
+
+Route::get('/delete-time/{id}', 'TimesController@delete');
+
 
 

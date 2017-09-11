@@ -37,7 +37,6 @@
                                         <td>{{ $runner->firstname }}</td>
                                         <td>{{ $runner->surname }}</td>
                                         <td>
-                                            <a href="/edit-runner/{{ $runner->id }}" class="btn btn-info btn-sm">Edit</a>
                                             <a href="/delete-runner/{{ $runner->id }}" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>

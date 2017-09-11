@@ -9,12 +9,20 @@
             </div>
         </div>
 
+        <div class="row" id="newTime">
+            <div class="col-md-8 col-mg-offset-2">
+                <div class="alert alert-info" role="alert">
+                    <strong>Yay!</strong> A new time has been entered
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Today's Times</div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" id="leaderboard">
                         @if (session('status'))
                             <div class="alert alert-success">
                                 {{ session('status') }}
@@ -38,7 +46,7 @@
                                 <tbody>
                                 @foreach( $times as $time )
 
-                                    <tr>
+                                    <tr id="time_{{ $time->id }}">
                                         <td># {{ $i }}</td>
                                         <td>{{ $time->runner['firstname'] }}</td>
                                         <td>{{ $time->runner['surname'] }}</td>
@@ -64,4 +72,13 @@
             </div>
         </div>
     </div>
+
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <script>
+
+
+
+    </script>
+
+
 @endsection

@@ -26,7 +26,7 @@
                             <?php
                                 $i = 1;
                             ?>
-                            <table class="table table-striped">
+                            <table class="table table-striped" id="add-times">
                                 <thead>
                                 <tr>
                                     <th>Pos.</th>

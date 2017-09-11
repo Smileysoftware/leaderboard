@@ -10,7 +10,7 @@ class LeaderboardController extends Controller
     public function index(  )
     {
 	    $times = Time::fetchTodaysTimes();
-
+	    
     	return view('leaderboard')->with('times' , $times );
     }
 }

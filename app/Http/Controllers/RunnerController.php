@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\createRunner;
+use App\Time;
 use App\User;
 
 /**
@@ -45,6 +46,8 @@ class RunnerController extends Controller
 	public static function delete( $id )
     {
     	$runner = User::where('id' , $id)->where('runner' , 1)->first();
+
+    	Time::where('user_id' , $id)->delete();
 
     	$runner->delete();
 
